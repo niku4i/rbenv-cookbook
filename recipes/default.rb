@@ -53,3 +53,18 @@ execute "rbenv rehash" do
   command "source /etc/profile.d/rbenv.sh; rbenv rehash"
   action :run
 end
+
+node['rbenv']['gems'].each do |rubie, gems|
+  #Array(gems).each do |gem|
+  gems.each do |gem|
+    execute "gem install #{gem}" do
+      command "source /etc/profile.d/rbenv.sh; RBENV_ROOT=#{node['rbenv']['root_path']} RBENV_VERSION=#{rubie} rbenv exec gem install #{gem}"
+      action :run
+    end
+  end
+end
+
+execute "rbenv rehash 2" do
+  command "source /etc/profile.d/rbenv.sh; rbenv rehash"
+  action :run
+end

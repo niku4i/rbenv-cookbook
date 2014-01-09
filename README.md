@@ -38,6 +38,13 @@ Attributes
     <td>ruby versions to builded by ruby-build.</td>
     <td><tt>[]</tt></td>
   </tr>
+  <tr>
+    <td><tt>['rbenv']['gems']</tt></td>
+    <td>Hash</td>
+    <td>Install specified gems after building ruby</td>
+    <td><tt>{}</tt></td>
+  </tr>
+
 </table>
 
 Usage
@@ -51,11 +58,16 @@ Include `rbenv-cookbook` in your node's `run_list`:
   "name":"my_node",
   "run_list": [
     "recipe[rbenv-cookbook]"
-  ]
+  ],
+  "override_attributes": {
+    "rbenv": {
+      "rubies": [ "2.0.0-p353" ],
+      "gems": {
+        "2.0.0-p353": [ "bundler" ]
+      }
+    }
+  }
 }
-override_attributes(
-  :rbenv => { rubies: ['2.0.0-p353', '2.1.0'] }
-)
 ```
 
 
