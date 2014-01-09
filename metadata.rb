@@ -1,6 +1,6 @@
 name             'rbenv-cookbook'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Nobuhiro Nikushi'
+maintainer_email 'deneb.ge@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures rbenv-cookbook'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
