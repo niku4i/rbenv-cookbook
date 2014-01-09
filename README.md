@@ -21,20 +21,30 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rbenv-cookbook']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['rbenv']['install_prefix']</tt></td>
+    <td>String</td>
+    <td>basepath to install rbenv</td>
+    <td><tt>/usr/local</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rbenv']['root_path']</tt></td>
+    <td>String</td>
+    <td>path to install rbenv</td>
+    <td><tt>/usr/local/rbenv</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rbenv']['rubies']</tt></td>
+    <td>Array</td>
+    <td>ruby versions to builded by ruby-build.</td>
+    <td><tt>[]</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### rbenv-cookbook::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `rbenv-cookbook` in your node's `run_list`:
+Include `rbenv-cookbook` in your node's `run_list`:
 
 ```json
 {
@@ -43,13 +53,15 @@ Just include `rbenv-cookbook` in your node's `run_list`:
     "recipe[rbenv-cookbook]"
   ]
 }
+override_attributes(
+  :rbenv => { rubies: ['2.0.0-p353', '2.1.0'] }
+)
 ```
+
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -59,4 +71,5 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+MIT,
+Authors: Nobuhiro Nikushi

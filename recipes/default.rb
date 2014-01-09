@@ -9,19 +9,19 @@
 
 include_recipe "yum-epel"
 
-git "/usr/local/rbenv" do
+git node[:rbenv][:root_path] do
   repository "git://github.com/sstephenson/rbenv.git"
   reference "master"
   action :sync
 end
 
-%w{/usr/local/rbenv/shims /usr/local/rbenv/versions /usr/local/rbenv/plugins}.each do |dir|
-  directory dir do
+%w{shims versions plugins}.each do |dir|
+  directory ::File.join(node[:rbenv][:root_path], dir) do
     action :create 
   end 
 end
 
-git "/usr/local/rbenv/plugins/ruby-build" do  
+git "#{node[:rbenv][:root_path]}/plugins/ruby-build" do  
   repository "git://github.com/sstephenson/ruby-build.git"
   reference "master"
   action :sync
@@ -41,10 +41,12 @@ end
   end 
 end
 
-execute "rbenv install 2.0.0-p195" do
-  not_if { ::File.exists?("/usr/local/rbenv/versions/2.0.0-p195") }
-  command "source /etc/profile.d/rbenv.sh; rbenv install 2.0.0-p195"
-  action :run
+Array(node['rbenv']['rubies']).each do |ruby|
+  execute "rbenv install #{ruby}" do
+    not_if { ::File.exists?("#{node[:rbenv][:root_path]}/versions/#{ruby}") }
+    command "source /etc/profile.d/rbenv.sh; rbenv install #{ruby}"
+    action :run
+  end
 end
 
 execute "rbenv rehash" do
