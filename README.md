@@ -12,7 +12,7 @@ Requirements
 Attributes
 ----------
 
-#### rbenv-cookbook::default
+#### rbenv::default
 <table>
   <tr>
     <th>Key</th>
@@ -49,15 +49,15 @@ Attributes
 
 Usage
 -----
-#### rbenv-cookbook::default
+#### rbenv::default
 
-Include `rbenv-cookbook` in your node's `run_list`:
+Include `rbenv` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[rbenv-cookbook]"
+    "recipe[rbenv]"
   ],
   "override_attributes": {
     "rbenv": {

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rbenv-cookbook
+# Cookbook Name:: rbenv
 # Recipe:: default
 #
 # Copyright 2014, YOUR_COMPANY_NAME

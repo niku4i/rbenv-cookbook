@@ -1,11 +1,11 @@
 DEPENDENCIES
-  rbenv-cookbook
+  rbenv
     path: .
     metadata: true
 
 GRAPH
-  rbenv-cookbook (0.1.0)
+  rbenv (0.1.0)
     yum-epel (>= 0.0.0)
-  yum (3.0.4)
-  yum-epel (0.2.0)
+  yum (3.1.4)
+  yum-epel (0.3.4)
     yum (~> 3.0)
