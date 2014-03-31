@@ -12,7 +12,7 @@ include_recipe "yum-epel"
 package "git"
 
 git node[:rbenv][:root_path] do
-  repository "git://github.com/sstephenson/rbenv.git"
+  repository "https://github.com/sstephenson/rbenv.git"
   reference "master"
   action :sync
 end
