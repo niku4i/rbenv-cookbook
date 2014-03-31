@@ -24,7 +24,7 @@ end
 end
 
 git "#{node[:rbenv][:root_path]}/plugins/ruby-build" do  
-  repository "git://github.com/sstephenson/ruby-build.git"
+  repository "https://github.com/sstephenson/ruby-build.git"
   reference "master"
   action :sync
 end
