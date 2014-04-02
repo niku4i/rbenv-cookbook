@@ -36,6 +36,12 @@ include_recipe "yum-epel"
 
 package "git"
 
+group node[:rbenv][:group]
+
+user node[:rbenv][:user] do
+  group node[:rbenv][:group]
+end
+
 git node[:rbenv][:root_path] do
   user node[:rbenv][:user]
   group node[:rbenv][:group]
