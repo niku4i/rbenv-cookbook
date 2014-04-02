@@ -21,12 +21,6 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rbenv']['root_path']</tt></td>
-    <td>String</td>
-    <td>path to install rbenv</td>
-    <td><tt>/usr/local/rbenv</tt></td>
-  </tr>
-  <tr>
     <td><tt>['rbenv']['user']</tt></td>
     <td>String</td>
     <td>username</td>
