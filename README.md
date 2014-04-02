@@ -21,16 +21,22 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rbenv']['install_prefix']</tt></td>
-    <td>String</td>
-    <td>basepath to install rbenv</td>
-    <td><tt>/usr/local</tt></td>
-  </tr>
-  <tr>
     <td><tt>['rbenv']['root_path']</tt></td>
     <td>String</td>
     <td>path to install rbenv</td>
     <td><tt>/usr/local/rbenv</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rbenv']['user']</tt></td>
+    <td>String</td>
+    <td>username</td>
+    <td><tt>rbenv</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rbenv']['group']</tt></td>
+    <td>String</td>
+    <td>group name</td>
+    <td><tt>rbenv</tt></td>
   </tr>
   <tr>
     <td><tt>['rbenv']['rubies']</tt></td>
