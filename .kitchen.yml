@@ -14,10 +14,20 @@ suites:
       - recipe[rbenv::default]
     attributes:
       rbenv:
-        user: rbenv
-        group: rbenv
-        rubies:
-          - 2.1.0
-        gems:
-          2.1.0: 
-            - bundler
+        user_installs: 
+          - 
+            user: rbenv
+            group: rbenv
+            rubies:
+              - 2.1.0
+            gems:
+              2.1.0: 
+                - bundler
+          - 
+            user: nikushi
+            group: nikushi
+            rubies:
+              - 2.1.0
+            gems:
+              2.1.0: 
+                - bundler

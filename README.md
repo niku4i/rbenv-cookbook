@@ -21,25 +21,31 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rbenv']['user']</tt></td>
+    <td><tt>['rbenv']['user_installs']</tt></td>
+    <td>Array</td>
+    <td></td>
+    <td><tt></tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rbenv']['user_installs'][i]['user']</tt></td>
     <td>String</td>
     <td>username</td>
     <td><tt>rbenv</tt></td>
   </tr>
   <tr>
-    <td><tt>['rbenv']['group']</tt></td>
+    <td><tt>['rbenv']['user_installs'][i]['group']</tt></td>
     <td>String</td>
     <td>group name</td>
     <td><tt>rbenv</tt></td>
   </tr>
   <tr>
-    <td><tt>['rbenv']['rubies']</tt></td>
+    <td><tt>['rbenv']['user_installs'][i]['rubies']</tt></td>
     <td>Array</td>
     <td>ruby versions to builded by ruby-build.</td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
-    <td><tt>['rbenv']['gems']</tt></td>
+    <td><tt>['rbenv']['user_installs'][i]['gems']</tt></td>
     <td>Hash</td>
     <td>Install specified gems after building ruby</td>
     <td><tt>{}</tt></td>
