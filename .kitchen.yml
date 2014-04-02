@@ -13,3 +13,9 @@ suites:
     run_list:
       - recipe[rbenv::default]
     attributes:
+      rbenv:
+        rubies:
+          - 2.1.0
+        gems:
+          2.1.0: 
+            - bundler
